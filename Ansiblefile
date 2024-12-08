@@ -3,3 +3,6 @@ ansible <worker-host> -b -m <module-name ex:copy> -a "src=/home/ansible/copy.txt
 
 Create the file in remote server from local server
 ansible <worker-host> -b -m file -a "name=sample.txt state=touch"
+
+Remove the file from remote server from local server
+ansible <worker-host> -b -m shell -a "rm /home/ansible/sample.txt"
