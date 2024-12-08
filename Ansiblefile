@@ -15,3 +15,7 @@ ansible dev -b -m shell -a "rmdir confidential"
 
 Change the directory in remote server from remote directory
 ansible dev -b -m shell -a "cd sample"
+
+Install git in remote directory from local server
+ansible dev -b -m yum -a "pkg=git state=present"
+
