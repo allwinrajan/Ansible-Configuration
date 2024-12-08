@@ -4,8 +4,12 @@ ansible <worker-host> -b -m <module-name ex:copy> -a "src=/home/ansible/copy.txt
 Create the file in remote server from local server
 ansible <worker-host> -b -m file -a "name=sample.txt state=touch"
 
-Remove the file from remote server from local server
+Remove the file in remote server from local server
 ansible <worker-host> -b -m shell -a "rm /home/ansible/sample.txt"
 
-Create directory remote server from local server
+Create directory in remote server from local server
 ansible dev -b -m shell -a "mkdir confidential"
+
+Remove directory in remote server from local server
+ansible dev -b -m shell -a "rmdir confidential"
+
