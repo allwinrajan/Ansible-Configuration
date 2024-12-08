@@ -1,2 +1,5 @@
 Copy the file from local server to remote server
 ansible <worker-host> -b -m <module-name ex:copy> -a "src=/home/ansible/copy.txt dest=/home/ansible/"
+
+Create the file in remote server from local server
+ansible <worker-host> -b -m file -a "name=sample.txt state=touch"
