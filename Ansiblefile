@@ -5,7 +5,7 @@ Create the file in remote server from local server
 ansible <worker-host> -b -m file -a "name=sample.txt state=touch"
 
 Remove the file in remote server from local server
-ansible <worker-host> -b -m shell -a "rm /home/ansible/sample.txt"
+ansible <worker-host> -b -m file -a "src=/home/ansible/sample.txt state=absent"
 
 Create directory in remote server from local server
 ansible dev -b -m shell -a "mkdir confidential"
@@ -15,6 +15,9 @@ ansible dev -b -m shell -a "rmdir confidential"
 
 Change the directory in remote server from remote directory
 ansible dev -b -m shell -a "cd /home/ansible/sample && ls 'Directory Changed'"
+
+Delete the file in remote server from local server
+ansible <worker-host> -b -m file -a "src=/home/ansible/sample.txt state=absent"
 
 Install git in remote directory from local server
 ansible dev -b -m yum -a "pkg=git state=present"
@@ -33,3 +36,6 @@ ansible dev -b -m shell -a "git clone https://github.com/allwinrajan/Ansible-Con
 
 Create a file in remote directory with file permission 0777 
 ansible dev -b -m file -a "path=/home/ansible/sample/all.txt mode=0777 state=touch"
+
+Remove a file in remote directory with file permission 0777 
+ansible dev -b -m file -a "path=/home/ansible/sample/all.txt state=absent"
