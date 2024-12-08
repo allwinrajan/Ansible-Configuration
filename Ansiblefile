@@ -1,1 +1,2 @@
-
+Copy the file from local server to remote server
+ansible <worker-host> -b -m <module-name ex:copy> -a "src=/home/ansible/copy.txt dest=/home/ansible/"
