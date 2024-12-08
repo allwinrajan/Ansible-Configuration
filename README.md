@@ -3,19 +3,6 @@
 
 This repository contains a collection of commonly used Ansible commands for managing remote servers, installing packages, creating/removing files and directories, and interacting with Docker and Git repositories.
 
-## Table of Contents
-- [Copy Files](#copy-files)
-- [Create Files](#create-files)
-- [Remove Files](#remove-files)
-- [Create and Remove Directories](#create-and-remove-directories)
-- [Change Directory](#change-directory)
-- [Install Packages](#install-packages)
-- [Docker Operations](#docker-operations)
-- [Git Operations](#git-operations)
-- [File Permissions](#file-permissions)
-
----
-
 ## Copy Files 📝
 
 **Copy a file from local to remote server**  
