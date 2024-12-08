@@ -14,7 +14,7 @@ Remove directory in remote server from local server
 ansible dev -b -m shell -a "rmdir confidential"
 
 Change the directory in remote server from remote directory
-ansible dev -b -m shell -a "cd sample"
+ansible dev -b -m shell -a "cd /home/ansible/sample && ls 'Directory Changed'"
 
 Install git in remote directory from local server
 ansible dev -b -m yum -a "pkg=git state=present"
@@ -26,7 +26,10 @@ Pull one httpd image in remote server from local server
 ansible dev -b -m shell -a "docker pull httpd"
 
 Run the container in remote server from local server
-ansible dev -b -m shell -a "docker run -it -d httpd"
+ansible dev -b -m shell -a "docker run -it -d --name webapp -p 8000:80 httpd"
 
 Clone a git repo in remote server from local server
 ansible dev -b -m shell -a "git clone https://github.com/allwinrajan/Ansible-Configuration.git"
+
+Create a file in remote directory with file permission 0777 
+ansible dev -b -m file -a "path=/home/ansible/sample/all.txt mode=0777 state=touch"
