@@ -127,3 +127,84 @@ To remove the file:
 ```bash
 ansible dev -b -m file -a "path=/home/ansible/sample/all.txt state=absent"
 ```
+
+---
+
+# Ansible Commands for Apache HTTP Server Operations 🚀
+
+This section includes a set of commonly used Ansible commands to manage the Apache HTTP Server (`httpd`) on remote hosts, along with file and directory management commands.
+
+---
+
+## Working with Directories 🗂️
+
+**Print the current working directory on each host**  
+To print the current working directory (`pwd`) on each host:
+
+```bash
+ansible dev -a "pwd"
+```
+
+**List the files in the current directory on each host**  
+To list the files in the current directory on each host:
+
+```bash
+ansible dev -a "ls"
+```
+
+**List all files (including hidden ones) in the current directory on each host**  
+To list all files, including hidden files (`ls -a`), on each host:
+
+```bash
+ansible dev -a "ls -a"
+```
+
+---
+
+## Install Apache HTTP Server (httpd) 🔥
+
+**Install Apache HTTP Server (httpd) on remote hosts**  
+To install the Apache HTTP Server (`httpd`) on the remote hosts:
+
+```bash
+ansible dev -a "sudo yum install httpd -y"
+```
+
+**Locate the installation path of the httpd binary on remote hosts**  
+To find the location of the `httpd` binary:
+
+```bash
+ansible dev -a "sudo which httpd"
+```
+
+---
+
+## Manage Apache HTTP Server (httpd) Service ⚙️
+
+**Check the status of the httpd (Apache) service with elevated privileges**  
+To check the status of the Apache HTTP Server service:
+
+```bash
+ansible dev -b -a "systemctl status httpd"
+```
+
+**Start the httpd (Apache) service on remote hosts with elevated privileges**  
+To start the Apache HTTP Server service:
+
+```bash
+ansible dev -b -a "systemctl start httpd"
+```
+
+**Stop the httpd (Apache) service on remote hosts with elevated privileges**  
+To stop the Apache HTTP Server service:
+
+```bash
+ansible dev -b -a "systemctl stop httpd"
+```
+
+**Remove the httpd package (Apache HTTP Server) from remote hosts with elevated privileges**  
+To remove the Apache HTTP Server package:
+
+```bash
+ansible dev -b -a "sudo yum remove httpd -y"
+```
