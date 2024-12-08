@@ -9,7 +9,7 @@ This repository contains a collection of commonly used Ansible commands for mana
 To copy a file from the local server to the remote server:
 
 ```bash
-ansible <worker-host> -b -m copy -a "src=/home/ansible/copy.txt dest=/home/ansible/"
+ansible dev -b -m copy -a "src=/home/ansible/copy.txt dest=/home/ansible/"
 ```
 
 ---
