@@ -19,3 +19,12 @@ ansible dev -b -m shell -a "cd sample"
 Install git in remote directory from local server
 ansible dev -b -m yum -a "pkg=git state=present"
 
+Install docker in remote server from local server
+ansible dev -b -m yum -a "pkg=docker state=present"
+
+Pull one httpd image in remote server from local server
+ansible dev -b -m shell -a "docker pull httpd"
+
+Run the container in remote server from local server
+ansible dev -b -m shell -a "docker run -it -d httpd"
+
