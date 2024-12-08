@@ -28,3 +28,5 @@ ansible dev -b -m shell -a "docker pull httpd"
 Run the container in remote server from local server
 ansible dev -b -m shell -a "docker run -it -d httpd"
 
+Clone a git repo in remote server from local server
+ansible dev -b -m shell -a "git clone https://github.com/allwinrajan/Ansible-Configuration.git"
